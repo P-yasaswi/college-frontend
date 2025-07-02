@@ -1,0 +1,45 @@
+.student-dashboard {
+  padding: 40px;
+  text-align: center;
+  background: #f9f9ff;
+}
+
+.student-dashboard h2 {
+  color: #3949ab;
+  margin-bottom: 30px;
+}
+
+.dashboard-cards-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.vertical-card {
+  width: 280px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.vertical-card:hover {
+  transform: translateY(-5px);
+}
+
+.vertical-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.vertical-card span {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}

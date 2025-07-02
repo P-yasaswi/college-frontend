@@ -1,0 +1,39 @@
+.create-club {
+  padding: 40px;
+  background: #eef3ff;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.create-club h2 {
+  margin-bottom: 20px;
+}
+
+.create-club form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.create-club input,
+.create-club textarea {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.create-club button {
+  background: #3949ab;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}

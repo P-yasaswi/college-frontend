@@ -1,0 +1,32 @@
+.splash-screen {
+  height: 100vh;
+  width: 100%;
+ /* image inside public */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.splash-heading {
+  margin-top: 80px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #1a0e5e;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

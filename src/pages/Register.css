@@ -1,0 +1,33 @@
+.register-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background: #c7c8cb;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.register-container h2 {
+  color: #1b4c89;
+  margin-bottom: 20px;
+}
+
+.register-container input,
+.register-container select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #372a9d;
+}
+
+.register-container button {
+  width: 100%;
+  padding: 10px;
+  background: hsl(210, 71%, 33%);
+  color: rgb(238, 238, 243);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

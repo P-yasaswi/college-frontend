@@ -1,0 +1,71 @@
+.announcements-page {
+  padding: 40px;
+  text-align: center;
+  background: #fcfbff;
+}
+
+.announcements-page h2 {
+  color: #6a1b9a;
+  margin-bottom: 30px;
+}
+
+.announcement-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.announcement-form input,
+.announcement-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.announcement-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.announcement-form button {
+  background-color: #6a1b9a;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.announcement-form button:hover {
+  background-color: #4a148c;
+}
+
+.announcement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.announcement-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.announcement-card h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.announcement-card p {
+  color: #555;
+}
