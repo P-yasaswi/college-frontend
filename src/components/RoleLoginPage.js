@@ -21,35 +21,35 @@ function RoleLoginPage() {
       }
     }));
   };
-
   const handleLogin = async (role) => {
-    const { email, password } = credentials[role];
+  const { email, password } = credentials[role];
 
-    if (!email || !password) {
-      alert('Please enter both email and password');
-      return;
+  if (!email || !password) {
+    alert('Please enter both email and password');
+    return;
+  }
+
+  try {
+    // ✅ FIXED: Declare res
+    const res = await axios.post('https://college-backend-eamn.onrender.com/api/login', { email, password });
+
+    if (res.status === 200) {
+      const user = res.data.user;
+      const token = res.data.token;
+
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(user));
+
+      alert('Login successful!');
+
+      if (user.role === 'admin') navigate('/admin');
+      else if (user.role === 'clubhead') navigate('/coordinator');
+      else navigate('/student');
     }
-
-    try {
-      const res = await axios.post('https://college-backend-opcw.onrender.com', { email, password });
-
-      if (res.status === 200) {
-        const user = res.data.user;
-        const token = res.data.token;
-
-        localStorage.setItem('token', token);
-        localStorage.setItem('user', JSON.stringify(user));
-
-        alert('Login successful!');
-
-        if (user.role === 'admin') navigate('/admin');
-        else if (user.role === 'clubhead') navigate('/coordinator');
-        else navigate('/student');
-      }
-    } catch (err) {
-      alert(err.response?.data?.message || 'Login failed!');
-    }
-  };
+  } catch (err) {
+    alert(err.response?.data?.message || 'Login failed!');
+  }
+};
 
   return (
     <div className="role-login-page">
