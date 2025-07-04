@@ -30,7 +30,7 @@ function CreateEvent() {
     formData.append('image', eventData.image);
 
     try {
-      const res = await fetch('http://localhost:5000/api/events/create', {
+      const res = await fetch('https://college-backend-eamn.onrender.com/api/events/create', {
         method: 'POST',
         body: formData,
       });

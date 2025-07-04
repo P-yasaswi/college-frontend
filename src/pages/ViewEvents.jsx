@@ -6,7 +6,7 @@ const ViewEvents = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/events')
+    axios.get('https://college-backend-eamn.onrender.com/api/events')
       .then(res => setEvents(res.data))
       .catch(err => {
         console.error('Failed to fetch events:', err);

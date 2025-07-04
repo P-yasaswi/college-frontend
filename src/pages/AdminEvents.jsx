@@ -20,7 +20,7 @@ const AdminEvents = () => {
 
   const fetchEvents = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/events');
+      const res = await axios.get('https://college-backend-eamn.onrender.com/api/events');
       setEvents(res.data);
     } catch (err) {
       console.error("Error fetching events:", err);
@@ -30,7 +30,7 @@ const AdminEvents = () => {
   const handleCreate = async () => {
     try {
       await axios.post(
-        'http://localhost:5000/api/events',
+        'https://college-backend-eamn.onrender.com/api/events',
         newEvent,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -46,7 +46,7 @@ const AdminEvents = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this event?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/events/${id}`, {
+      await axios.delete(`https://college-backend-eamn.onrender.com/api/events/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert('🗑️ Event Deleted!');
@@ -60,7 +60,7 @@ const AdminEvents = () => {
   const handleUpdate = async (id, updatedTitle) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/events/${id}`,
+        `https://college-backend-eamn.onrender.com/api/events/${id}`,
         { title: updatedTitle },
         { headers: { Authorization: `Bearer ${token}` } }
       );
