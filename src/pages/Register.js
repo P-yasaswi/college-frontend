@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './Register.css';
 
 function Register() {
@@ -8,9 +9,15 @@ function Register() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Registered as ${form.role}!`);
+
+    try {
+      const res = await axios.post('https://college-backend-eamn.onrender.com/api/register', form);
+      alert(res.data.message || 'Registered successfully!');
+    } catch (err) {
+      alert(err.response?.data?.message || 'Registration failed!');
+    }
   };
 
   return (
@@ -34,4 +41,3 @@ function Register() {
 }
 
 export default Register;
-

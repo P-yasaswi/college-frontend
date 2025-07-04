@@ -31,7 +31,10 @@ function RoleLoginPage() {
     }
 
     try {
-      const res = await axios.post('https://college-backend-eamn.onrender.com/api/login', { email, password });
+      const res = await axios.post('https://college-backend-eamn.onrender.com/api/login', {
+        email,
+        password,
+      });
 
       const user = res.data.user;
       const token = res.data.token;
@@ -39,13 +42,13 @@ function RoleLoginPage() {
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
 
-      alert('Login successful!');
+      alert('✅ Login successful!');
 
       if (user.role === 'admin') navigate('/admin');
-      else if (user.role === 'clubhead') navigate('/coordinator');
+      else if (user.role === 'clubhead' || user.role === 'coordinator') navigate('/coordinator');
       else navigate('/student');
     } catch (err) {
-      alert(err.response?.data?.message || 'Login failed!');
+      alert(err.response?.data?.message || '❌ Login failed!');
     }
   };
 
@@ -140,5 +143,3 @@ function RoleLoginPage() {
 }
 
 export default RoleLoginPage;
-
-
