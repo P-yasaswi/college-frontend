@@ -18,6 +18,9 @@ import RegisterEvent from './pages/RegisterEvent';
 import GiveFeedback from './pages/GiveFeedback';
 import CreateClub from './pages/CreateClub';
 import AdminEvents from './pages/AdminEvents';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Logout from './pages/Logout';
 
 
 
@@ -55,6 +58,9 @@ function App() {
           <Route path="/student/feedback" element={<GiveFeedback />} />
           <Route path="/create-club" element={<CreateClub />} />
           <Route path="/admin-events" element={<AdminEvents />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/logout" element={<Logout />} />
       
 
         </Routes>
