@@ -64,7 +64,7 @@ function RoleLoginPage() {
         <div className="navbar-right">
           <button onClick={() => navigate('/about')}>About Us</button>
           <button onClick={() => navigate('/contact')}>Contact Us</button>
-          <button onClick={() => navigate('/logout')}>Logout</button>
+
 
           <button onClick={() => {
             localStorage.removeItem('token');

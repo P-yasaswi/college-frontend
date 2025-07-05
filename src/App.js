@@ -20,7 +20,6 @@ import CreateClub from './pages/CreateClub';
 import AdminEvents from './pages/AdminEvents';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Logout from './pages/Logout';
 
 
 
@@ -60,7 +59,7 @@ function App() {
           <Route path="/admin-events" element={<AdminEvents />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/logout" element={<Logout />} />
+
       
 
         </Routes>
