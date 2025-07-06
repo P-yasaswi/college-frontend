@@ -1,14 +1,18 @@
 .feedback-container {
   padding: 40px;
-  background: #f2f6fc;
   min-height: 100vh;
   text-align: center;
+  background: linear-gradient(to right, #e0f7fa, #e1bee7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .feedback-container h2 {
   color: #2c3e50;
   margin-bottom: 30px;
-  font-size: 26px;
+  font-size: 28px;
 }
 
 .feedback-form {
@@ -48,6 +52,7 @@
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .feedback-form button:hover {
