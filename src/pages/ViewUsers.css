@@ -1,7 +1,7 @@
 .view-users {
   padding: 40px;
   text-align: center;
-  background: #f9f9ff;
+  background: linear-gradient(to right, #e0f7fa, #e1bee7);
 }
 
 .view-users h2 {

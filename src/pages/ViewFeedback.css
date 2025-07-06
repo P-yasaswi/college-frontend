@@ -1,7 +1,7 @@
 .view-feedback {
   padding: 40px;
   text-align: center;
-  background-color: #f8f7ff;
+  background: linear-gradient(to right, #e0f7fa, #e1bee7);
 }
 
 .view-feedback h2 {

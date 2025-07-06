@@ -1,7 +1,7 @@
 .announcements-page {
   padding: 40px;
   text-align: center;
-  background: #fcfbff;
+  background: linear-gradient(to right, #e0f7fa, #e1bee7);
 }
 
 .announcements-page h2 {

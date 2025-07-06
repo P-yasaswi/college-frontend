@@ -1,7 +1,7 @@
 .student-announcements-page {
   padding: 40px;
   min-height: 100vh;
-  background: #e8f0fe;
+  background: linear-gradient(to right, #e0f7fa, #e1bee7);
   text-align: center;
 }
 

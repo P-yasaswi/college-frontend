@@ -1,6 +1,6 @@
 .register-form-container {
   padding: 40px;
-  background: #eef3ff;
+  background: linear-gradient(to right, #e0f7fa, #e1bee7);
   min-height: 100vh;
   text-align: center;
 }

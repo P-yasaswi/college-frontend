@@ -2,7 +2,7 @@
   padding: 40px;
   max-width: 600px;
   margin: auto;
-  background-color: #ffffff;
+  background: linear-gradient(to right, #e0f7fa, #e1bee7);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
 }
