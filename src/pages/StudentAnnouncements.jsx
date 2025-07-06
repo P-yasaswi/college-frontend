@@ -5,19 +5,26 @@ import axios from 'axios';
 function StudentAnnouncements() {
   const [announcements, setAnnouncements] = useState([]);
 
-  // ✅ Fetch all announcements on page load
+  // ✅ Try to fetch announcements from backend
   useEffect(() => {
     axios.get('https://college-backend-eamn.onrender.com/api/announcements')
       .then(res => setAnnouncements(res.data))
       .catch(err => {
         console.error('Failed to load announcements:', err);
-        alert('❌ Could not fetch announcements');
+        alert('❌ Could not fetch announcements. Showing dummy data.');
+
+        // ✅ Dummy fallback announcements
+        setAnnouncements([
+          { _id: '1', title: '🎉 Welcome to the Campus!', message: 'Orientation starts July 10th at the auditorium.' },
+          { _id: '2', title: '📢 Hackathon Registration', message: 'Join our inter-college hackathon. Deadline: July 14th.' },
+          { _id: '3', title: '🎓 Club Meetups', message: 'All clubs meet every Friday at 4PM.' },
+        ]);
       });
   }, []);
 
   return (
     <div className="student-announcements-page">
-      <h2>Latest Announcements</h2>
+      <h2>📢 Latest Announcements</h2>
 
       {announcements.length === 0 ? (
         <p className="empty-msg">No announcements to display.</p>
@@ -36,3 +43,4 @@ function StudentAnnouncements() {
 }
 
 export default StudentAnnouncements;
+

@@ -65,7 +65,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/student/announcements" element={<StudentAnnouncements />} />
 
-
       
 
         </Routes>
