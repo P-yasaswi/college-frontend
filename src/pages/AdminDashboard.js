@@ -6,7 +6,7 @@ import viewIcon from '../assets/icons/view.png';
 import userIcon from '../assets/icons/user.png';
 import feedbackIcon from '../assets/icons/feedback.png';
 import announceIcon from '../assets/icons/announcement.png';
-
+import backgroundImage from '../assets/admin-bg.jpg'; // ✅ background image from src/assets
 
 function AdminDashboard() {
   const navigate = useNavigate();
@@ -18,11 +18,21 @@ function AdminDashboard() {
     { title: 'View Feedback', icon: feedbackIcon, action: () => navigate('/admin/view-feedback') },
     { title: 'Announcements', icon: announceIcon, action: () => navigate('/admin/announcements') },
     { title: 'Create/View Events', icon: viewIcon, action: () => navigate('/admin-events') }
-
   ];
 
   return (
-    <div className="dashboard">
+    <div
+      className="dashboard"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        minHeight: '100vh',
+        padding: '40px',
+        textAlign: 'center',
+      }}
+    >
       <h2>Admin Home</h2>
       <div className="dashboard-cards-vertical">
         {features.map((feature, index) => (
@@ -37,6 +47,7 @@ function AdminDashboard() {
 }
 
 export default AdminDashboard;
+
 
 
 

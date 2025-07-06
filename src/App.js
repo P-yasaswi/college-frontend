@@ -25,6 +25,7 @@ import Contact from './pages/Contact';
 
 
 
+
 function App() {
   const [showSplash, setShowSplash] = useState(true);
 
