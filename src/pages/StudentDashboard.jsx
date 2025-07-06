@@ -5,6 +5,7 @@ import registerIcon from '../assets/icons/register.png';
 import myEventIcon from '../assets/icons/myevents.png';
 import feedbackIcon from '../assets/icons/feedbacks.png';
 import { useNavigate } from 'react-router-dom';
+import backgroundImage from '../assets/student-bg.jpg'; // ✅ Add this
 
 function StudentDashboard() {
   const navigate = useNavigate();
@@ -14,15 +15,21 @@ function StudentDashboard() {
     { title: 'Search Events', icon: searchIcon, action: () => navigate('/student/search-events') },
     { title: 'Register for Events', icon: registerIcon, action: () => navigate('/student/register') },
     { title: 'Give Feedback', icon: feedbackIcon, action: () => navigate('/student/feedback') },
-
-
-    
-
   ];
 
   return (
-    <div className="student-dashboard">
-      <h2>Student Dashboard</h2>
+    <div
+      className="student-dashboard"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: '100vh',
+        padding: '40px',
+        textAlign: 'center',
+      }}
+    >
+      <h2 style={{ color: '#fff', marginBottom: '30px', fontSize: '28px' }}>Student Dashboard</h2>
 
       <div className="dashboard-cards-vertical">
         {features.map((feature, index) => (
@@ -37,3 +44,4 @@ function StudentDashboard() {
 }
 
 export default StudentDashboard;
+
