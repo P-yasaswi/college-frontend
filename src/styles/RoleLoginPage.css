@@ -1,6 +1,6 @@
 .role-login-page {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #f0f8ff, #e6f7ff);
+  background: linear-gradient(to right, #e9ecf0, #e0f0f8);
   min-height: 100vh;
   padding: 20px;
 }
@@ -27,7 +27,7 @@
 
 .logo-heading {
   font-size: 22px;
-  color: #ffffff;
+  color: hsl(219, 16%, 82%);
   font-weight: bold;
 }
 

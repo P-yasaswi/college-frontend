@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/RoleLoginPage.css';
+import backgroundImage from '../assets/login-bg.jpg'; // ✅ imported
 
 function RoleLoginPage() {
   const navigate = useNavigate();
@@ -53,7 +54,17 @@ function RoleLoginPage() {
   };
 
   return (
-    <div className="role-login-page">
+    <div
+      className="role-login-page"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: '100vh',
+        width: '100%',
+        paddingBottom: '40px',
+      }}
+    >
       <nav className="navbar">
         <div className="navbar-left">
           <div className="logo-title">
@@ -64,8 +75,6 @@ function RoleLoginPage() {
         <div className="navbar-right">
           <button onClick={() => navigate('/about')}>About Us</button>
           <button onClick={() => navigate('/contact')}>Contact Us</button>
-
-
           <button onClick={() => {
             localStorage.removeItem('token');
             localStorage.removeItem('user');
@@ -74,7 +83,7 @@ function RoleLoginPage() {
         </div>
       </nav>
 
-      <div className="login-heading">
+      <div className="login-heading" style={{ color: '#003366;', textAlign: 'center', marginTop: '30px' }}>
         <h1>Welcome to the Login Page</h1>
         <p>Please select your role and login below</p>
       </div>
@@ -145,3 +154,5 @@ function RoleLoginPage() {
 }
 
 export default RoleLoginPage;
+
+

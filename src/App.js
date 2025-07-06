@@ -20,6 +20,9 @@ import CreateClub from './pages/CreateClub';
 import AdminEvents from './pages/AdminEvents';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import StudentAnnouncements from './pages/StudentAnnouncements';
+
+
 
 
 
@@ -60,6 +63,8 @@ function App() {
           <Route path="/admin-events" element={<AdminEvents />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/student/announcements" element={<StudentAnnouncements />} />
+
 
       
 

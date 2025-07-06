@@ -4,6 +4,7 @@ import searchIcon from '../assets/icons/search.png';
 import registerIcon from '../assets/icons/register.png';
 import myEventIcon from '../assets/icons/myevents.png';
 import feedbackIcon from '../assets/icons/feedbacks.png';
+import announceIcon from '../assets/icons/announcement.png';
 import { useNavigate } from 'react-router-dom';
 import backgroundImage from '../assets/student-bg.jpg'; // ✅ Add this
 
@@ -15,6 +16,8 @@ function StudentDashboard() {
     { title: 'Search Events', icon: searchIcon, action: () => navigate('/student/search-events') },
     { title: 'Register for Events', icon: registerIcon, action: () => navigate('/student/register') },
     { title: 'Give Feedback', icon: feedbackIcon, action: () => navigate('/student/feedback') },
+    { title: 'Announcements', icon: announceIcon, action: () => navigate('/student/announcements') }
+
   ];
 
   return (

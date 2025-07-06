@@ -1,30 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './AdminAnnouncements.css';
+import axios from 'axios';
 
 function AdminAnnouncements() {
-  const [announcements, setAnnouncements] = useState([
-    { id: 1, title: 'Tech Fest 2025', message: 'Starts on July 5th. Don’t miss it!' },
-    { id: 2, title: 'Club Registrations Open', message: 'Join your favorite clubs before July 7th.' },
-  ]);
-
+  const [announcements, setAnnouncements] = useState([]);
   const [formData, setFormData] = useState({
     title: '',
     message: '',
   });
 
+  // ✅ Fetch announcements from backend
+  useEffect(() => {
+    axios.get('https://college-backend-eamn.onrender.com/api/announcements')
+      .then(res => setAnnouncements(res.data))
+      .catch(err => console.error('Error fetching announcements:', err));
+  }, []);
+
+  // ✅ Handle form input
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  // ✅ Submit new announcement to backend
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const newAnnouncement = {
-      id: announcements.length + 1,
-      ...formData,
-    };
-    setAnnouncements([newAnnouncement, ...announcements]);
-    setFormData({ title: '', message: '' });
-    alert('Announcement added successfully!');
+    try {
+      const res = await axios.post('https://college-backend-eamn.onrender.com/api/announcements', formData);
+      setAnnouncements([res.data, ...announcements]);
+      setFormData({ title: '', message: '' });
+      alert('✅ Announcement added successfully!');
+    } catch (error) {
+      alert('❌ Failed to add announcement.');
+      console.error(error);
+    }
   };
 
   return (
@@ -46,13 +54,13 @@ function AdminAnnouncements() {
           value={formData.message}
           onChange={handleChange}
           required
-        ></textarea>
+        />
         <button type="submit">Add Announcement</button>
       </form>
 
       <div className="announcement-list">
         {announcements.map((item) => (
-          <div className="announcement-card" key={item.id}>
+          <div className="announcement-card" key={item._id}>
             <h3>{item.title}</h3>
             <p>{item.message}</p>
           </div>
@@ -63,3 +71,4 @@ function AdminAnnouncements() {
 }
 
 export default AdminAnnouncements;
+

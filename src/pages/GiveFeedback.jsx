@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './GiveFeedback.css';
 
 function GiveFeedback() {
@@ -14,16 +15,27 @@ function GiveFeedback() {
     setFeedback({ ...feedback, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Feedback Submitted:', feedback);
-    alert('Thank you for your feedback!');
-    setFeedback({
-      name: '',
-      email: '',
-      message: '',
-      rating: '',
-    });
+
+    try {
+      const res = await axios.post('https://college-backend-eamn.onrender.com/api/feedback', feedback);
+
+      if (res.data.success) {
+        alert('✅ Thank you for your feedback!');
+        setFeedback({
+          name: '',
+          email: '',
+          message: '',
+          rating: '',
+        });
+      } else {
+        alert('❌ Failed to submit feedback: ' + res.data.message);
+      }
+    } catch (err) {
+      alert('❌ Error while submitting feedback!');
+      console.error(err);
+    }
   };
 
   return (
@@ -69,3 +81,4 @@ function GiveFeedback() {
 }
 
 export default GiveFeedback;
+

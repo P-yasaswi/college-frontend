@@ -1,0 +1,50 @@
+.student-announcements-page {
+  padding: 40px;
+  min-height: 100vh;
+  background: #e8f0fe;
+  text-align: center;
+}
+
+.student-announcements-page h2 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.announcement-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.announcement-card {
+  width: 80%;
+  max-width: 600px;
+  background-color: white;
+  padding: 20px;
+  border-left: 6px solid #3949ab;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.announcement-card:hover {
+  transform: translateY(-5px);
+}
+
+.announcement-card h3 {
+  margin: 0 0 10px;
+  color: #3949ab;
+}
+
+.announcement-card p {
+  color: #333;
+  font-size: 16px;
+}
+
+.empty-msg {
+  color: #666;
+  font-style: italic;
+  margin-top: 30px;
+}

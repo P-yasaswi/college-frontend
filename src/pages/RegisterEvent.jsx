@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './RegisterEvent.css';
+import axios from 'axios';
+import './RegisterEvent.css'; // Keep your styles
 
 function RegisterEvent() {
   const [formData, setFormData] = useState({
@@ -16,19 +17,30 @@ function RegisterEvent() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Registration Data:', formData);
-    alert('Registration Successful!');
-    setFormData({
-      fullName: '',
-      email: '',
-      phone: '',
-      college: '',
-      department: '',
-      year: '',
-      rollNumber: '',
-    });
+
+    try {
+      const res = await axios.post('https://college-backend-eamn.onrender.com/api/register-event', formData);
+
+      if (res.data.success) {
+        alert('✅ Registration Successful!');
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          college: '',
+          department: '',
+          year: '',
+          rollNumber: '',
+        });
+      } else {
+        alert('❌ Registration Failed: ' + res.data.message);
+      }
+    } catch (err) {
+      alert('❌ Error during registration!');
+      console.error(err);
+    }
   };
 
   return (
@@ -97,3 +109,4 @@ function RegisterEvent() {
 }
 
 export default RegisterEvent;
+
